@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Захиалгын болон Төлбөрийн Жагсаалт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .table-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        // Захиалгын өгөгдөл
+        const orders = [
+            { id: 1, customer: "Бат", product: "Зөөврийн компьютер", quantity: 1, total: "1,500,000₮" },
+            { id: 2, customer: "Сараа", product: "Гар утас", quantity: 2, total: "2,200,000₮" },
+            { id: 3, customer: "Дорж", product: "Чихэвч", quantity: 3, total: "300,000₮" }
+        ];
+
+        // Төлбөрийн өгөгдөл
+        const payments = [
+            { id: 1, customer: "Бат", amount: "1,500,000₮", date: "2024-11-23", status: "Амжилттай" },
+            { id: 2, customer: "Сараа", amount: "2,200,000₮", date: "2024-11-22", status: "Амжилттай" },
+            { id: 3, customer: "Дорж", amount: "300,000₮", date: "2024-11-21", status: "Төлөөгүй" }
+        ];
+
+        // Захиалгын жагсаалтыг харуулах
+        function displayOrders() {
+            const orderTableBody = document.getElementById("order-table-body");
+            orderTableBody.innerHTML = ""; // Хуучин өгөгдлийг цэвэрлэх
+
+            orders.forEach((order) => {
+                const row = document.createElement("tr");
+
+                Object.values(order).forEach((value) => {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+
+                orderTableBody.appendChild(row);
+            });
+        }
+
+        // Төлбөрийн жагсаалтыг харуулах
+        function displayPayments() {
+            const paymentTableBody = document.getElementById("payment-table-body");
+            paymentTableBody.innerHTML = ""; // Хуучин өгөгдлийг цэвэрлэх
+
+            payments.forEach((payment) => {
+                const row = document.createElement("tr");
+
+                Object.values(payment).forEach((value) => {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+
+                paymentTableBody.appendChild(row);
+            });
+        }
+
+        // Ачаалахад жагсаалтыг харуулах
+        window.onload = function () {
+            displayOrders();
+            displayPayments();
+        };
+
+        // Үндсэн хуудас руу чиглүүлэх
+        function goToHome() {
+            window.location.href = "index.html"; // Үндсэн хуудасны замыг оруулна
+        }
+    </script>
+</head>
+<body>
+    <h1>Захиалгын болон Төлбөрийн Жагсаалт</h1>
+
+    <!-- Захиалгын хүснэгт -->
+    <div class="table-container">
+        <h2>Захиалгын Жагсаалт</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Үйлчлүүлэгч</th>
+                    <th>Бараа</th>
+                    <th>Тоо ширхэг</th>
+                    <th>Нийт дүн</th>
+                </tr>
+            </thead>
+            <tbody id="order-table-body">
+                <!-- Динамик өгөгдөл энд нэмэгдэнэ -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Төлбөрийн хүснэгт -->
+    <div class="table-container">
+        <h2>Төлбөрийн Жагсаалт</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Үйлчлүүлэгч</th>
+                    <th>Төлбөрийн Дүн</th>
+                    <th>Огноо</th>
+                    <th>Төлөв</th>
+                </tr>
+            </thead>
+            <tbody id="payment-table-body">
+                <!-- Динамик өгөгдөл энд нэмэгдэнэ -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Товчнууд -->
+    <div class="button-container">
+        <button onclick="window.history.back()">Буцах</button>
+        <button onclick="goToHome()">Үндсэн Хуудас</button>
+    </div>
+</body>
+</html>

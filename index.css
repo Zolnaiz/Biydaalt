@@ -1,0 +1,131 @@
+/* Анхдагч стилийг засах */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header хэсэг */
+header {
+    background-color: #2d3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Хайлт хэсэг */
+#search {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#search form input, #search form button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+#search form button {
+    background-color: #2d3e50;
+    color: white;
+    cursor: pointer;
+}
+
+#search form button:hover {
+    background-color: #1a242f;
+}
+
+/* Байрны жагсаалт */
+#properties {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+#properties h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.property-card {
+    background-color: white;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.property-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.property-card h3 {
+    margin: 10px 0;
+}
+
+.property-card p {
+    font-size: 14px;
+    color: #777;
+}
+
+.property-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+/* Footer хэсэг */
+footer {
+    background-color: #2d3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

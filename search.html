@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машин вэб сайт</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header хэсэг -->
+    <header>
+        <div class="logo">
+            <h1>Машин- Админ </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Нүүр хуудас</a></li>
+                <li><a href="user.html">Барааны Жагсаалт</a></li>
+                <li><a href="Order.html">Захиалгын, Төлбөрийн жагсаалт</a></li>
+                <li><a href="list.html">Үйлчлүүлэгчийн жигсаалт</a></li>
+                <li><a href="index.html">Мэдээ Жагсаалтлт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Байр хайх хэсэг -->
+    <section id="search">
+        <h2>Таны мөрөөдлийн Машинийг олоорой</h2>
+        <form action="search.php" method="POST">
+            <input type="text" name="location" placeholder="Байршил" required>
+            <input type="number" name="min_price" placeholder="Хамгийн бага үнэ" required>
+            <input type="number" name="max_price" placeholder="Хамгийн их үнэ" required>
+            <button type="submit">Хайх</button>
+        </form>
+    </section>
+
+    <!-- Байрны жагсаалт -->
+    <section id="properties">
+        <h2>Бэлэн машинууд</h2>
+        <div class="property-list">
+            <!-- Байрнууд энд динамик байдлаар ачаалагдана -->
+        </div>
+    </section>
+
+    <!-- Footer хэсэг -->
+    <footer>
+        <p>&copy; 2024 вэб сайт</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
